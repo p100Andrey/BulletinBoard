@@ -6,17 +6,17 @@ import javax.persistence.*;
 @Table(name = "user")
 public class User {
     @Id
-    @Column(name = "userid")
+//    @Column(name = "userid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userid;
 
-    @Column(name = "username")
+//    @Column(name = "username")
     private String userName;
 
-    @Column(name = "userpassword")
+//    @Column(name = "userpassword")
     private String userPassword;
 
-    @Column(name = "userphone")
+//    @Column(name = "userphone")
     private String userPhone;
 
     public int getUserid() {

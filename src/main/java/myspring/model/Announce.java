@@ -6,23 +6,23 @@ import javax.persistence.*;
 @Table(name = "announce")
 public class Announce {
     @Id
-    @Column(name = "announceid")
+//    @Column(name = "announceid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int announceid;
 
-    @Column(name = "announcetitle")
+//    @Column(name = "announcetitle")
     private String announceTitle;
 
-    @Column(name = "announcetext")
+//    @Column(name = "announcetext")
     private String announceText;
 
-    @Column(name = "announcefoto")
+//    @Column(name = "announcefoto")
     private String announceFoto;
 
-    @Column(name = "announceauthor")
+//    @Column(name = "announceauthor")
     private int announceAuthor;
 
-    @Column(name = "announcecreationtime")
+//    @Column(name = "announcecreationtime")
     private int announceCreationTime;
 
     public int getAnnounceid() {

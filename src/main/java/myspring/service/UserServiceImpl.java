@@ -1,6 +1,6 @@
 package myspring.service;
 
-import myspring.dao.UserDao;
+import myspring.dao.Userable;
 import myspring.model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,10 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
-    private UserDao userDao;
+public class UserServiceImpl implements Userable {
+    private myspring.dao.Userable userDao;
 
-    public void setUserDao(UserDao userDao) {
+    public void setUserDao(myspring.dao.Userable userDao) {
         this.userDao = userDao;
     }
 

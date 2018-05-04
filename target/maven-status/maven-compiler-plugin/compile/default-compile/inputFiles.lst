@@ -1,11 +1,9 @@
-C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\dao\UserDao.java
 C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\dao\AnnounceDaoImpl.java
 C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\model\User.java
-C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\service\AnnounceService.java
 C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\service\AnnounceServiceImpl.java
 C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\controller\AnnounceController.java
+C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\dao\Userable.java
 C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\service\UserServiceImpl.java
-C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\service\UserService.java
+C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\dao\Announcable.java
 C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\dao\UserDaoImpl.java
 C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\model\Announce.java
-C:\Users\Lena\IdeaProjects\BulletinBoard2\src\main\java\myspring\dao\AnnounceDao.java

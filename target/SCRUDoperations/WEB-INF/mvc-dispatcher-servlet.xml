@@ -40,7 +40,7 @@
         </property>
     </bean>
 
-    <!--AnnounceDao and BookService beans-->
+    <!--Announcable and BookService beans-->
     <bean id="announceDao" class="myspring.dao.AnnounceDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>

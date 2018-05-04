@@ -1,11 +1,9 @@
-myspring\service\AnnounceService.class
+myspring\dao\Announcable.class
+myspring\dao\Userable.class
 myspring\model\Announce.class
-myspring\dao\AnnounceDao.class
 myspring\service\AnnounceServiceImpl.class
 myspring\model\User.class
 myspring\dao\UserDaoImpl.class
 myspring\dao\AnnounceDaoImpl.class
-myspring\service\UserService.class
 myspring\service\UserServiceImpl.class
-myspring\dao\UserDao.class
 myspring\controller\AnnounceController.class

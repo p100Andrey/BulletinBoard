@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class AnnounceDaoImpl implements AnnounceDao {
+public class AnnounceDaoImpl implements Announcable {
 
     private SessionFactory sessionFactory;
 

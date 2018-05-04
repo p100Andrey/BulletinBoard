@@ -1,9 +1,9 @@
 package myspring.controller;
 
+import myspring.dao.Announcable;
+import myspring.dao.Userable;
 import myspring.model.Announce;
 import myspring.model.User;
-import myspring.service.AnnounceService;
-import myspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 class AnnounceController {
-    private AnnounceService announceService;
+    private Announcable announceService;
 
     @Autowired(required = true)
     @Qualifier(value = "announceService")
-    public void setAnnounceService(AnnounceService announceService) {
+    public void setAnnounceService(Announcable announceService) {
         this.announceService = announceService;
     }
 
@@ -74,11 +74,11 @@ class AnnounceController {
         return "announcedata";
     }
 
-    private UserService userService;
+    private Userable userService;
 
     @Autowired(required = true)
     @Qualifier(value = "userService")
-    public void setUserService(UserService userService) {
+    public void setUserService(Userable userService) {
         this.userService = userService;
     }
 
