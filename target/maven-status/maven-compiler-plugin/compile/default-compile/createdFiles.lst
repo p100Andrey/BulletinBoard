@@ -7,3 +7,4 @@ myspring\dao\UserDaoImpl.class
 myspring\dao\AnnounceDaoImpl.class
 myspring\service\UserServiceImpl.class
 myspring\controller\AnnounceController.class
+myspring\SwaggerConfig.class

@@ -72,4 +72,16 @@ public class Announce {
     public void setAnnounceCreationTime(int announceCreationTime) {
         this.announceCreationTime = announceCreationTime;
     }
+
+    @Override
+    public String toString() {
+        return "Announce{" +
+                "announceid=" + announceid +
+                ", announceTitle='" + announceTitle + '\'' +
+                ", announceText='" + announceText + '\'' +
+                ", announceFoto='" + announceFoto + '\'' +
+                ", announceAuthor=" + announceAuthor +
+                ", announceCreationTime=" + announceCreationTime +
+                '}';
+    }
 }

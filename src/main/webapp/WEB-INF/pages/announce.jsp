@@ -64,7 +64,7 @@
             <c:forEach items="${listAnnounce}" var="announce">
                 <jsp:useBean id="now" class="java.util.Date" />
                 <c:if test="${(now.time - announce.announcecreationtime)/(1000*60*60)>24}">
-                    <c:url value='/announceremove/${announce.announceid}'/>
+                    <c:url value='/announce/${announce.announceid}'/>
                 </c:if>
             </c:forEach>
 
@@ -82,10 +82,10 @@
                     <td>${announce.announceid}</td>
                     <td>${announce.announcetitle}</td>
                     <td>${announce.announcetext}</td>
-                    <td>${announce.announcefoto}</td>
+                    <td><img src=${announce.announcefoto}></td>
                     <td>${announce.announceauthor}</td>
-                    <td><a href="<c:url value='/announceedit/${announce.announceid}'/>">Edit</a></td>
-                    <td><a href="<c:url value='/announceremove/${announce.announceid}'/>">Delete</a></td>
+                    <td><a method = "PUT" href="<c:url value='/announce/${announce.announceid}'/>">Edit</a></td>
+                    <td><a method = "DELETE" href="<c:url value='/announce/${announce.announceid}'/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </c:if>

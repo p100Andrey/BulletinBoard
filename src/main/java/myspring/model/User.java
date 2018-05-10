@@ -74,4 +74,14 @@ public class User {
         result = 31 * result + (userPhone != null ? userPhone.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userid=" + userid +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userPhone='" + userPhone + '\'' +
+                '}';
+    }
 }

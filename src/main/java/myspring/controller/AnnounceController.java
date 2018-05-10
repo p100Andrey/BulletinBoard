@@ -4,22 +4,25 @@ import myspring.dao.Announcable;
 import myspring.dao.Userable;
 import myspring.model.Announce;
 import myspring.model.User;
+import myspring.service.AnnounceServiceImpl;
+import myspring.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+//@Controller
+
+@RestController
+@RequestMapping("/announce")
+
 class AnnounceController {
-    private Announcable announceService;
+    private AnnounceServiceImpl announceService;
 
     @Autowired(required = true)
     @Qualifier(value = "announceService")
-    public void setAnnounceService(Announcable announceService) {
+    public void setAnnounceService(AnnounceServiceImpl announceService) {
         this.announceService = announceService;
     }
 
@@ -34,7 +37,7 @@ class AnnounceController {
     }
 
     @RequestMapping(value = "announce", method = RequestMethod.GET)
-    public String listAnnounce(Model model){
+    public String listAnnounce(Model model) {
         model.addAttribute("announce", new Announce());
         model.addAttribute("listAnnounce", this.announceService.listAnnounce());
 
@@ -42,48 +45,48 @@ class AnnounceController {
     }
 
     @RequestMapping(value = "/announce/add", method = RequestMethod.POST)
-    public String addAnnounce(@ModelAttribute("announce") Announce announce){
-        if(announce.getAnnounceid() == 0){
+    public String addAnnounce(@ModelAttribute("announce") Announce announce) {
+        if (announce.getAnnounceid() == 0) {
             this.announceService.addAnnounce(announce);
-        }else {
+        } else {
             this.announceService.updateAnnounce(announce);
         }
 
         return "redirect:/announce";
     }
 
-    @RequestMapping("/announceremove/{id}")
-    public String removeAnnounce(@PathVariable("id") int id){
+    @RequestMapping(value = "/announce/{id}", method = RequestMethod.DELETE)
+    public String removeAnnounce(@PathVariable("id") int id) {
         this.announceService.removeAnnounce(id);
 
         return "redirect:/announce";
     }
 
-    @RequestMapping("announceedit/{id}")
-    public String editAnnounce(@PathVariable("id") int id, Model model){
+    @RequestMapping(value = "announce/{id}", method = RequestMethod.PUT)
+    public String editAnnounce(@PathVariable("id") int id, Model model) {
         model.addAttribute("announce", this.announceService.getAnnounceById(id));
         model.addAttribute("listAnnounce", this.announceService.listAnnounce());
 
         return "announce";
     }
 
-    @RequestMapping("announcedata/{id}")
-    public String announceData(@PathVariable("id") int id, Model model){
+    @RequestMapping(value = "announce/{id}", method = RequestMethod.GET)
+    public String announceData(@PathVariable("id") int id, Model model) {
         model.addAttribute("announce", this.announceService.getAnnounceById(id));
 
         return "announcedata";
     }
 
-    private Userable userService;
+    private UserServiceImpl userService;
 
     @Autowired(required = true)
     @Qualifier(value = "userService")
-    public void setUserService(Userable userService) {
+    public void setUserService(UserServiceImpl userService) {
         this.userService = userService;
     }
 
     @RequestMapping(value = "user", method = RequestMethod.GET)
-    public String listUser(Model model){
+    public String listUser(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("listUser", this.userService.listUser());
 
@@ -91,33 +94,33 @@ class AnnounceController {
     }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User user){
-        if(user.getUserid() == 0){
+    public String addUser(@ModelAttribute("user") User user) {
+        if (user.getUserid() == 0) {
             this.userService.addUser(user);
-        }else {
+        } else {
             this.userService.updateUser(user);
         }
 
         return "redirect:/user";
     }
 
-    @RequestMapping("/userremove/{id}")
-    public String removeUser(@PathVariable("id") int id){
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
+    public String removeUser(@PathVariable("id") int id) {
         this.userService.removeUser(id);
 
         return "redirect:/user";
     }
 
-    @RequestMapping("useredit/{id}")
-    public String editUser(@PathVariable("id") int id, Model model){
+    @RequestMapping(value = "user/{id}", method = RequestMethod.PUT)
+    public String editUser(@PathVariable("id") int id, Model model) {
         model.addAttribute("user", this.userService.getUserById(id));
         model.addAttribute("listUser", this.userService.listUser());
 
         return "user";
     }
 
-    @RequestMapping("userdata/{id}")
-    public String userData(@PathVariable("id") int id, Model model){
+    @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
+    public String userData(@PathVariable("id") int id, Model model) {
         model.addAttribute("user", this.userService.getUserById(id));
 
         return "userdata";
